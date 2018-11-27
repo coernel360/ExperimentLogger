@@ -9,6 +9,10 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+Assets/Logs/*
+
+###Unwanted Assets####
+Assets/SteamVR/*
 
 # Visual Studio cache directory
 .vs/

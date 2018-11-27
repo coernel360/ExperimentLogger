@@ -1,0 +1,3 @@
+[submodule "ExperimentLogger/Assets/VRTK"]
+	path = ExperimentLogger/Assets/VRTK
+	url = https://github.com/thestonefox/VRTK.git

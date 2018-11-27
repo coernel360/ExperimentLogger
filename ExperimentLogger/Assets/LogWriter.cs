@@ -33,8 +33,8 @@ public class LogWriter : MonoBehaviour
 
     void WriteLog()
     {
-        if (Log)
-            writer.WriteLine ("test" + " , " + DateTime.Now.Millisecond);
+       // if (Log)
+          //  writer.WriteLine (" , " + DateTime.Now.Millisecond);
     }
 
     // Update is called once per frame

@@ -44,7 +44,7 @@ public class LoggerManager : MonoBehaviour {
     void WriteLog ()
     {
         foreach (GameObject go in objectsToLog)
-            writer.WriteLine (go.name + "," + go.transform.position.ToString () + "," + DateTime.Now.Millisecond);
+            writer.WriteLine (go.name + "," + go.transform.position.ToString () + "," + Vector3.Distance(this.transform.position, anchorObject.transform.position) + "," + DateTime.Now.Millisecond);
     }
 
     private void OnApplicationQuit ()
