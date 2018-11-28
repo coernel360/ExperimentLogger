@@ -38,14 +38,26 @@ public class LoggerManager : MonoBehaviour {
 
         writer = new StreamWriter (path + LogFileName);
 
+    }
+
+    public void StartRecording ()
+    {
         InvokeRepeating ("WriteLog", 0, 1 / LoggingFrequency);
     }
 
+    public void StopRecording ()
+    {
+        CancelInvoke ("WriteLog");
+    }
     void WriteLog ()
     {
         foreach (GameObject go in objectsToLog)
-            writer.WriteLine (go.name + "," + go.transform.position.ToString () + "," + Vector3.Distance(this.transform.position, anchorObject.transform.position) + "," + DateTime.Now.Millisecond);
+        {
+            writer.WriteLine (go.name + "," + go.transform.position.ToString () + "," + Vector3.Distance (this.transform.position, anchorObject.transform.position) + "," + DateTime.Now.Millisecond);
+            Debug.Log (go.name + "," + go.transform.position.ToString () + "," + Vector3.Distance (this.transform.position, anchorObject.transform.position) + "," + DateTime.Now.Millisecond);
+        }
     }
+
 
     private void OnApplicationQuit ()
     {
